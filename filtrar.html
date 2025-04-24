@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Filtrar Personajes | D&D</title>
+  <link rel="stylesheet" href="styles/filtrar.css" />
+</head>
+<body>
+  
+
+  <header class="header">
+    <div class="logo">D&D</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="crear.html">Crear personaje</a>
+    </nav>
+  </header>
+
+<div id="favoritesPanel" class="favorites-panel hidden">
+  <h2>Personajes Favoritos</h2>
+  <div id="favoritesContainer"></div>
+</div>
+<button id="toggleFavoritesBtn">⭐ Ver Favoritos</button>
+  <main class="main-container">
+    <section class="filters">
+      <h2>Filtra tu Personaje</h2>
+      <input type="text" id="nameInput" placeholder="🔍 Buscar por nombre..." />
+
+      <select id="raceSelect"><option value="">Raza</option></select>
+      <select id="classSelect"><option value="">Clase</option></select>
+      <select id="genderSelect">
+        <option value="">Género</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <input type="text" id="armorInput" placeholder="Armadura o arma..." />
+      <input type="text" id="skillInput" placeholder="Habilidad especial..." />
+      <input type="text" id="accessoryInput" placeholder="Accesorio..." />
+
+      <div class="stats-filter">
+        <input type="number" id="strengthInput" placeholder="Fuerza mínima" />
+        <input type="number" id="dexterityInput" placeholder="Destreza mínima" />
+        <input type="number" id="intelligenceInput" placeholder="Inteligencia mínima" />
+      </div>
+    </section>
+
+    <section id="charactersContainer" class="characters-container">
+      <!-- Personajes filtrados aparecerán aquí -->
+    </section>
+  </main>
+
+  <script src="src/filtrar.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio | Dungeons & Dragons</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap">
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+</head>
+<body class="theme-black">
+  <div class="parallax-bg"></div>
+
+  <header>
+    <div class="logo">D&D</div>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="crearPj.html ">Crear personaje</a>
+      <a href="filtrar.html">Filtrar</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="info-section">
+      <h1 id="main-title" class="typing-effect" data-splitting>Descubre tu aventura</h1>
+      <p id="main-text" class="typing-effect" data-splitting>Explora el mundo de Dungeons & Dragons y crea tu propio camino.</p>
+        <div class="mode-buttons">
+        <button class="mode-btn active" data-theme="black"></button>
+        <button class="mode-btn" data-theme="white"></button>
+        <button class="mode-btn" data-theme="blue"></button>
+      </div>
+      <div class="extra-buttons hidden" id="extra-buttons">
+        <a href="filtrar.html" class="extra-btn">🔍 Buscar personajes</a>
+        <a href="crearPj.html" class="extra-btn">🎲 Crear personaje</a>
+      </div>
+      
+    </section>
+    <section class="image-section">
+      <img id="main-image" src="assets/images/dyd.jpg" alt="Imagen D&D"/>
+    </section>
+  </main>
+
+  <script src="src/script.js"></script>
+  <script>Splitting();</script>
+</body>
+</html>

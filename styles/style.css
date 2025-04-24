@@ -1,0 +1,331 @@
+:root {
+  --color1: #0f2027;
+  --color2: #203a43;
+  --color3: #2c5364;
+  --color4: #1c1c2b;
+}
+
+body {
+  background: radial-gradient(circle at top left, var(--color1), var(--color2), var(--color3), var(--color4));
+  background-size: 300% 300%;
+  animation: fadeGradient 30s ease infinite;
+  transition: background 0.6s ease;
+}
+
+/* Nueva animación más suave */
+@keyframes fadeGradient {
+  0% {
+    background-position: 0% 50%;
+    filter: brightness(1);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: brightness(1.05);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: brightness(1);
+  }
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: #9dc3ff;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 5%;
+  min-height: 90vh;
+}
+
+.info-section {
+  flex: 1;
+  max-width: 50%;
+  /* background-color: red; */
+  animation: fadeIn 1.2s ease;
+}
+.info-section h1{
+  font-size: 3vw;
+  width: 80%;
+}
+.info-section p{
+  font-size: 1.3vw;
+}
+.image-section {
+  flex: 1;
+  text-align: center;
+}
+
+.image-section img {
+  max-width: 800px;
+  max-height: 600px;
+  
+  transition: opacity 0.6s ease;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Mode buttons abajo del texto */
+.mode-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.mode-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.mode-btn[data-theme="black"] {
+  background-color: black;
+}
+
+.mode-btn[data-theme="white"] {
+  background-color: white;
+  border-color: #333;
+}
+
+.mode-btn[data-theme="blue"] {
+  background-color: #001f3f;
+}
+
+.mode-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.mode-btn.active {
+  transform: scale(1.4);
+  border: 3px solid #9dc3ff;
+}
+
+/* Themes */
+.theme-black {
+  background-color: #000;
+  color: #fff;
+}
+
+.theme-white {
+  background-color: #fff;
+  color: #000;
+}
+
+.theme-blue {
+  background-color: #001f3f;
+  color: #fff;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typing-effect .char {
+  opacity: 0;
+  animation: typing 0.05s forwards;
+  animation-fill-mode: forwards;
+  display: inline-block;
+}
+
+.typing-effect .char:nth-child(n) {
+  animation-delay: calc(0.05s * var(--char-index));
+}
+
+@keyframes typing {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Cursor parpadeante */
+.typing-effect::after {
+  content: '|';
+  animation: blink 1s infinite step-start;
+  font-weight: bold;
+  margin-left: 4px;
+  color: #fffacd;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Brillo al pasar el mouse por el texto */
+.typing-effect:hover {
+  text-shadow: 0 0 8px #fffacd, 0 0 12px #ffd700;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Sombra animada detrás del título */
+#main-title {
+  position: relative;
+  z-index: 1;
+}
+
+#main-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulseShadow 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulseShadow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+.mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 1.5rem;
+}
+
+.mode-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+.mode-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.7);
+}
+
+/* Botón activo más grande */
+.mode-btn.active {
+  transform: scale(1.5);
+  box-shadow: 0 0 12px 6px rgba(255, 255, 255, 0.9);
+}
+
+.extra-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  transition: opacity 0.4s ease;
+}
+
+.extra-buttons.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.extra-buttons.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.extra-btn {
+  background-color: #1c1c2b;
+  color: #fff;
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
+  border: 2px solid #4fa3a5;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.extra-btn:hover {
+  background-color: #4fa3a5;
+  color: #1c1c2b;
+  transform: scale(1.05);
+}
+/* Estilo base del nav */
+nav a {
+  position: relative;
+  margin: 0 1.2rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+/* Hover elegante con subrayado animado */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(to right, #4fa3a5, #00fbff); /* efecto degradado */
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+
+nav a:hover {
+  color: #4fa3a5; /* color de texto al hacer hover */
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Animación de aparición del nav */
+nav {
+  animation: fadeDown 1s ease-out;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
