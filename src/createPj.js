@@ -51,8 +51,8 @@ window.addEventListener('DOMContentLoaded', () => {
       introScreen.classList.add('hidden');
 
       const form = createCharacterForm();
-      formSection.appendChild(form);
-      formSection.classList.remove('hidden');
+/*       formSection.appendChild(form);
+ */      formSection.classList.remove('hidden');
       formSection.classList.add('visible');
     }, 2000); // coincide con duración de la ola
   });

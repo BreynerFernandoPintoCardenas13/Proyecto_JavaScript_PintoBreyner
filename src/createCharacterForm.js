@@ -76,8 +76,7 @@ export function createCharacterForm() {
 
     </div>
 
-  `;
-
+  `
   /* JS PARA ESCOGER ITEMS SEGUN CLASE PAPIIIII */
 
   // ✅ Aquí sí ya existen los elementos del formulario, los puedes seleccionar:
